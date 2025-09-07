@@ -1,21 +1,34 @@
 import numpy as np
-from flask import Flask, request, jsonify, render_template
+import streamlit as st
 import pickle
 
-# Create flask app
-flask_app = Flask(__name__)
+# Load model
 model = pickle.load(open("model.pkl", "rb"))
 
-@flask_app.route("/")
-def Home():
-    return render_template("index.html")
+st.title("Crop Prediction Model 🌾")
 
-@flask_app.route("/predict", methods = ["POST"])
-def predict():
-    float_features = [float(x) for x in request.form.values()]
-    features = [np.array(float_features)]
-    prediction = model.predict(features)
-    return render_template("index.html", prediction_text = "The Predicted Crop is {}".format(prediction))
+# Input fields
+Nitrogen = st.text_input("Nitrogen")
+Phosphorus = st.text_input("Phosphorus")
+Potassium = st.text_input("Potassium")
+temperature = st.text_input("Temperature")
+humidity = st.text_input("Humidity")
+ph = st.text_input("pH")
+rainfall = st.text_input("Rainfall")
 
-if __name__ == "__main__":
-    flask_app.run(debug=True)
+if st.button("Predict"):
+    try:
+        float_features = [
+            float(Nitrogen),
+            float(Phosphorus),
+            float(Potassium),
+            float(temperature),
+            float(humidity),
+            float(ph),
+            float(rainfall)
+        ]
+        features = [np.array(float_features)]
+        prediction = model.predict(features)
+        st.success(f"The Predicted Crop is: {prediction[0]}")
+    except Exception as e:
+        st.error("Please enter valid numbers for all fields.")
