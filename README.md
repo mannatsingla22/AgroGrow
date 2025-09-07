@@ -1,4 +1,3 @@
-  
 # AgroGrow - Crop Prediction System 🌾
 
 AgroGrow is a machine learning-based system designed to assist farmers and agricultural enthusiasts in identifying the most suitable crop to grow based on soil and environmental conditions. By leveraging data-driven insights, AgroGrow empowers users to make informed decisions, improving productivity and sustainability.
@@ -8,7 +7,8 @@ AgroGrow is a machine learning-based system designed to assist farmers and agric
 ## Features 🚀
 
 - **Accurate Crop Recommendations**: Predicts the most suitable crop based on key environmental parameters.
-- **Interactive Web Interface**: Dynamically input data via a user-friendly website.
+- **Interactive Web Interface**: Dynamically input data via a user-friendly Streamlit website.
+
 ---
 
 ## Live Demo 🌐
@@ -20,7 +20,7 @@ Try AgroGrow online:
 
 ## Model Comparison and Selection 📊
 
-During the development of AgroGrow, evalutaion of three machine learning models was done to determine the best fit for crop prediction based on their accuracy scores:
+During the development of AgroGrow, evaluation of three machine learning models was done to determine the best fit for crop prediction based on their accuracy scores:
 
 - **Logistic Regression**: 94.55%
 - **Support Vector Machine (SVC)**: 96.14%
@@ -28,6 +28,7 @@ During the development of AgroGrow, evalutaion of three machine learning models 
 
 After analyzing the results, **Random Forest** was chosen as the final model for its superior accuracy and ability to handle complex patterns in the data effectively.
 
+---
 
 ## Dataset 📊
 
@@ -45,10 +46,9 @@ This project utilizes the **Crop Recommendation Dataset** from Kaggle. The datas
 
 ## Technologies Used 🛠️
 
-- **Frontend**: HTML, CSS
-- **Backend**: Flask
+- **Web App**: Streamlit
 - **Libraries**:
-  - Python (Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn)
+  - Python (Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn, Streamlit)
 
 ---
 
@@ -60,19 +60,15 @@ This project utilizes the **Crop Recommendation Dataset** from Kaggle. The datas
    cd AgroGrow
    ```
 2. **Install dependencies:**
-
-```bash
-pip install -r requirements.txt
- ```
-3. **Run the application:**
-
-```bash
-python app.py
- ```
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. **Run the Streamlit application:**
+   ```bash
+   streamlit run app.py
+   ```
 
 4. **Access the web application at:**
-
-```bash
-http://127.0.0.1:5000/
- ```
-
+   ```
+   http://localhost:8501/
+   ```
