@@ -11,6 +11,13 @@ AgroGrow is a machine learning-based system designed to assist farmers and agric
 - **Interactive Web Interface**: Dynamically input data via a user-friendly website.
 ---
 
+## Live Demo 🌐
+
+Try AgroGrow online:  
+🔗 [https://agrogrow.streamlit.app/](https://agrogrow.streamlit.app/)
+
+---
+
 ## Model Comparison and Selection 📊
 
 During the development of AgroGrow, evalutaion of three machine learning models was done to determine the best fit for crop prediction based on their accuracy scores:
